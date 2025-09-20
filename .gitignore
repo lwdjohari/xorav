@@ -53,3 +53,74 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# --- C/C++ build artifacts ---
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+a.out
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Debug / coverage / dumps
+*.pdb
+*.dSYM/
+*.gcno
+*.gcda
+*.gcov
+*.stackdump
+core
+*.core
+
+# --- CMake (out-of-source preferred) ---
+# Common build dirs
+build/
+build-*/
+cmake-build-*/
+_build/
+_build-*/
+
+# In-source CMake byproducts
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+DartConfiguration.tcl
+Testing/
+CMakeOutput.log
+CMakeError.log
+Makefile
+# If you keep compile_commands.json in VCS, comment the next line
+# compile_commands.json
+
+# Ninja (in case someone configures in-tree with -G Ninja)
+build.ninja
+.ninja_log
+.ninja_deps
+rules.ninja
+
+# --- Binaries/artefact dirs (adjust to your tree) ---
+bin/
+lib/
+out/
+dist/
+
+# --- OS/editor noise ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.cache/
+.idea/
+.vscode/
+bak/
