@@ -110,7 +110,6 @@ rules.ninja
 
 # --- Binaries/artefact dirs (adjust to your tree) ---
 bin/
-lib/
 out/
 dist/
 
