@@ -182,6 +182,10 @@ add_subdirectory(xorav)
 # xorav-examples
 add_subdirectory(examples/dns-resolver)
 add_subdirectory(examples/dns-http-get)
+add_subdirectory(examples/compression-test)
+add_subdirectory(examples/headers-test)
+
+
 
 # Configuration summary (debug) 
 # ----------------------------------------------

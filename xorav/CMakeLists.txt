@@ -6,7 +6,9 @@ cmake_minimum_required(VERSION 3.14)
 # -------------------------------
 set(XORAV_SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_dns_ares.c
-  
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_config.c
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_headers.c
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_compress.c  
 )
 
 # (Optional) If you plan to "install" public headers later, list them here.
@@ -36,6 +38,8 @@ target_include_directories(xorav
   PUBLIC
     "${CMAKE_SOURCE_DIR}/lib/inc"
     "${CMAKE_CURRENT_SOURCE_DIR}/inc"
+    "${CMAKE_SOURCE_DIR}/third_party/stb_ds/inc"
+
   PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/src"
 )
@@ -61,8 +65,11 @@ endif()
 target_link_libraries(xorav
   PUBLIC
     Threads::Threads
-  PRIVATE
     ${_UV_LINK}
+    OpenSSL::SSL OpenSSL::Crypto
+    ZLIB::ZLIB
+    brotlidec
+  PRIVATE
     ${_CARES_TARGET}
     jansson
 )
