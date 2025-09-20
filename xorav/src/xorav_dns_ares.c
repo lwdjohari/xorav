@@ -90,35 +90,6 @@ static void on_timer(uv_timer_t *t)
 }
 
 /* ares host callback wrapper */
-static void host_cb(void *arg, int status, int timeouts, struct hostent *host)
-{
-  (void)timeouts;
-
-  struct {
-    xorav_dns_result_cb cb;
-    char               *host;
-    void               *user;
-    xorav_dns_ares_t   *R;
-  }          *ctx = arg;
-
-  const char *out_ip = NULL;
-  char        ipbuf[INET6_ADDRSTRLEN];
-
-  if (status == ARES_SUCCESS && host && host->h_addr_list &&
-      host->h_addr_list[0]) {
-    if (host->h_addrtype == AF_INET) {
-      uv_inet_ntop(AF_INET, host->h_addr_list[0], ipbuf, sizeof(ipbuf));
-      out_ip = ipbuf;
-    } else if (host->h_addrtype == AF_INET6) {
-      uv_inet_ntop(AF_INET6, host->h_addr_list[0], ipbuf, sizeof(ipbuf));
-      out_ip = ipbuf;
-    }
-  }
-
-  ctx->cb(status, ctx->host, out_ip, ctx->user);
-  free(ctx->host);
-  free(ctx);
-}
 
 static void addrinfo_cb(void *arg, int status, int timeouts,
                         struct ares_addrinfo *res)
