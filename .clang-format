@@ -2,7 +2,7 @@ Language: Cpp
 
 # -------
 # These are the most likely ones you might want to edit
-ColumnLimit: 100
+ColumnLimit: 80
 BracedInitializerIndentWidth: 2
 ContinuationIndentWidth: 2
 ConstructorInitializerIndentWidth: 2
