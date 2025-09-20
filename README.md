@@ -1,2 +1,2 @@
 # xorav
-Reusable libuv for TCP &amp; UDS
+Reusable C lib of libuv impl for TCP &amp; UDS
