@@ -74,7 +74,7 @@ static int  make_sockaddr_any(const char *ip, int port,
   return AF_UNSPEC; /* invalid ip string */
 }
 
-/* === DNS result callback ===
+/* DNS result callback 
  * We attempt to connect to the FIRST IP we get (A or AAAA).
  * If you want retries over multiple IPs, collect them and attempt in order.
  */
@@ -125,7 +125,7 @@ static void dns_cb(int status, const char *host, const char *ip, void *user)
   }
 }
 
-/* === TCP connect callback === */
+/*  TCP connect callback  */
 static void on_connect(uv_connect_t *req, int status)
 {
   http_demo_t *ctx = (http_demo_t *)req->handle->data;
