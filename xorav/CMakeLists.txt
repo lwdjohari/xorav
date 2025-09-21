@@ -8,7 +8,9 @@ set(XORAV_SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_dns_ares.c
    ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_config.c
    ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_headers.c
-   ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_compress.c  
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_compress.c
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/xorav_http_client.c  
+
 )
 
 # (Optional) If you plan to "install" public headers later, list them here.
